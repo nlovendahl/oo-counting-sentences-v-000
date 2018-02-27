@@ -15,14 +15,7 @@ class String
   end
 
   def count_sentences
-    split_string = []
-    split_string << self.split(/[?.!]/)
-    no_empties = []
-    split_string.each do |x|
-      if x != "" && x != " "
-        no_empties << x
-      end
-    end
-    counted_string = no_empties.count
+    split_string = self.split(/[?.!]/).select {|x| x != ""}
+    split_string.count
   end
 end

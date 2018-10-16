@@ -1,5 +1,3 @@
-require 'pry'
-
 class String
 
   def sentence?
@@ -15,7 +13,9 @@ class String
   end
 
   def count_sentences
-    split_string = self.split(/[?.!]/).select {|x| x != ""}
-    split_string.count
+    array = self.split(/[\.\?\!]/)
+    array.delete("")
+    array.length
   end
+
 end
